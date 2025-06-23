@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Input your blog below</h1>
+ 
+<form action="/save" method="post">
+      <label for="heading">Blog Heading
+            <input name="heading" type="text" required>
+      </label>
+      <label for="blog-text">Place blog text below
+            <input name="blog-content" type="text" required>
+      </label>
+      <button type="submit">Upload Blog</button>
+</form>
+
+
+
+<%- include("partials/footer.ejs") %>
