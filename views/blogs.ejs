@@ -1,11 +1,33 @@
 <%- include("partials/header.ejs") %>
 
-<h1>
-   <%= header %>
-</h1>
+<% if (blogs.length > 0 ) { %>
+   <ul>
+    <% headers.forEach(header => { %>
+      
+      <li> 
+         <h2> <%= header %> </h2>
+         <p><%= blogs %></p>
+      </li>
 
-<p> test test
-<%=  %>
-</p>
+   <% }); %>     
+   </ul>
+
+  <% } else { %>
+ 
+<p>No blogs yet.</p>
+   <% } %>
+   <form action="/search" method="post">
+      <label for="edit-search"> Type the header of the post you want to edit 
+         <input name="edit-search" type="text">
+      </label>
+      <button type="submit">Search</button>
+   </form>
+   <form action="/edit" method="post">
+      <label for="edit-post">
+         <input type="text" name="edit-post" >
+      </label>
+   </form>
+  
+
 
 <%- include("partials/footer.ejs") %>
